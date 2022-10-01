@@ -453,17 +453,15 @@ ul, li {
         width: 60%;
     }
 
-    .project-polaroid:nth-child(3n) img {
-        transform:rotate(3deg)
-    }
 
-    .project-polaroid:nth-child(4n) img {
+    .project-polaroid:nth-child(even) img {
         transform:rotate(-3deg)
     }
 
-    .project-polaroid:nth-child(5n) img {
-        transform:rotate(-1deg)
+    .project-polaroid:nth-child(odd) img {
+        transform:rotate(3deg)
     }
+
 
     .project-polaroid:hover {
         /*animation: swing 100ms infinite alternate;*/
@@ -584,11 +582,12 @@ ul, li {
 }
 
 .bcard-container {
+    z-index:10;
     transform:rotate(10deg);
     position: absolute;
     /*perspective: 1000;*/
     top: 50%;
-    right:25%;
+    right:5%;
 }
 
 .card {
@@ -598,6 +597,7 @@ ul, li {
 }
 
 figure {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     background: #2e5d5a;
     color: #fff;
     backface-visibility: hidden;
@@ -745,6 +745,14 @@ figure {
     transform: scale(1);
 }
 
+.front img{
+    width:100%;
+}
+
+.back img{
+    width:100%;
+}
+
 .back dl {
     font-family: 'Lato', Arial, sans-serif;
     font-weight: 300;
@@ -826,6 +834,7 @@ figure a {
     transform: rotate(-14deg);
     position: absolute;
     right: 5%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     top: 20%;
     cursor: pointer;
 }
@@ -964,4 +973,46 @@ figure a {
 .envelope:hover .letter {
     transform: translateY(-100px);
     z-index: 2;
+}
+
+#git-card{
+    position:absolute;
+    top:25%;
+    transform:rotate(5deg);
+    left:0%;
+}
+
+    #git-card img {
+        border-radius: 35px;
+        width: 50%;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+#link-card{
+    position:absolute;
+    top:60%;
+    width:fit-content;
+    transform:rotate(-5deg);
+    left:0%;
+    z-index:0;
+}
+
+    #link-card img {
+        left: 0%;
+        background-color: white;
+        padding: 10px;
+        border-radius: 35px;
+        width: 30%;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+.contact-container {
+    z-index: 4;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    right: 75%;
+    top: 50%;
+    background: #F8F4E3;
+    border-radius: 35px;
 }
